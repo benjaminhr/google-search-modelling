@@ -6,6 +6,5 @@ const firstThree = mySearcHistory.get(3)
 const all = mySearcHistory.get()
 
 log(
-  all, 
   firstThree
 )

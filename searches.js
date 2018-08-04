@@ -9,8 +9,8 @@ class Searches {
     this.sortedData = {}
   }
 
-  _isInArray(value, array) {
-    return array.indexOf(value) > -1
+  _notInArray(value, array) {
+    return array.indexOf(value) > -1 ? false : true 
   }
 
   _sortObject(obj) {
@@ -53,7 +53,7 @@ class Searches {
       const seperatedWord = queryText.split(' ')
 
       seperatedWord.forEach((w) => {
-        if (!this._isInArray(w, ['to', 'in', 'is', 'of', 'what', 'the', 'a', 'for', 'and', 'on', 'does', 'with', ''])) {
+        if (this._notInArray(w, ['to', 'in', 'is', 'of', 'what', 'the', 'a', 'for', 'and', 'on', 'does', 'with', ''])) {
           let word = w.toLowerCase()
           if (this.sortedData[word]) {
             this.sortedData[word]++
