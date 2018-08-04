@@ -27,7 +27,13 @@ class Searches {
   }
 
   getJsonFileNames() {
-    const files = fs.readdirSync(this.path)
+    let files; 
+
+    try {
+      files = fs.readdirSync(this.path)
+    } catch(e) {
+      this._handleError(`Folder: ${this.path} not found`)
+    }
 
     if (files.length < 1) {
       this._handleError(`${this.path} was not found or no JSON files was found in directory: ${this.path}`)
