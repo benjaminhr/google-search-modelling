@@ -1,10 +1,11 @@
-const Searches = require('./searches')
-const mySearcHistory = new Searches('./data/')
 const { log } = console
 
-const firstThree = mySearcHistory.get(3) 
-const all = mySearcHistory.get()
+const Searches = require('./searches')
+const mySearchHistory = new Searches('./data/')
+const firstThree = mySearchHistory.get(3)
 
-log(
-  firstThree
-)
+const Model = require('./model')
+const SearchModel = new Model()
+
+SearchModel.createBarChart(firstThree)
+
