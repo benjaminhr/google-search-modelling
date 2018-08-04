@@ -7,5 +7,7 @@ const firstThree = mySearchHistory.get(3)
 const Model = require('./model')
 const SearchModel = new Model()
 
-SearchModel.createBarChart(firstThree)
+log(
+  SearchModel.createBarChart(firstThree)
+)
 
